@@ -3,16 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.special import expit
 from scipy import optimize as opt
+from load_data import load_data
 
 # Load Data
 
 filename = 'ex4data1.mat'
-data = loadmat(filename)
+x, y = load_data(filename)
 
-x = data['X']
-y = data['y']
-
-y[y == 10] = 0
 
 # Visualize the Images
 
