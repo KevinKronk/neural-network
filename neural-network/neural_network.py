@@ -5,11 +5,17 @@ from scipy.special import expit
 from scipy import optimize as opt
 from load_data import load_data
 from load_weights import load_weights
+from cost_function import cost_function
+from map_outputs import map_outputs
 
-# Load Data
+
+# Load Data and Weights
 
 filename = 'ex4data1.mat'
 x, y = load_data(filename)
+
+weight_file = 'ex4weights.mat'
+params = load_weights(weight_file)
 
 
 # Visualize the Images
@@ -38,15 +44,15 @@ for j in range(nrows):
 
 # Set values and Load Weights
 
+input_layer = 400
+hidden_layer = 25
+output_layer = 10
 
-weight_file = 'ex4weights.mat'
-params = load_weights(weight_file)
+
+# Map Outputs
 
 k = 10
-m = y.size
-y_map = np.zeros((k, m))
-for i in range(m):
-    y_map[y[i], i] = 1
+y_map = map_outputs(y, k)
 
 
 cost = cost_function(params, x, y_map, hyper_p=0)
