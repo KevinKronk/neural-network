@@ -1,3 +1,7 @@
+import numpy as np
+from scipy.special import expit
+
+
 def feed_forward(thetas, x):
 
     a = np.copy(x.T)
