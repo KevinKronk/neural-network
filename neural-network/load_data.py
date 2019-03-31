@@ -8,7 +8,6 @@ def load_data(filename):
 
     x = data['X']
     y = data['y']
-
     y[y == 10] = 0
 
     return x, y

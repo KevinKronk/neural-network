@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
+from additional_funtions import rand_weight
 from load_data import load_data
 from load_weights import load_weights
 from map_outputs import map_outputs
-from additional_funtions import rand_weight
 from train import train
 
 
@@ -16,7 +17,7 @@ weight_file = 'ex4weights.mat'
 params = load_weights(weight_file)
 
 
-# Set values and Load Weights
+# Set values
 
 input_layer = 400
 hidden_layer = 25
