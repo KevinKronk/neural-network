@@ -58,18 +58,6 @@ for i in range(m):
     y_map[y[i], i] = 1
 
 
-def feed_forward(thetas, x):
-
-    a = np.copy(x.T)
-    history = []
-    for theta in thetas:
-        a = np.insert(a, 0, 1, axis=0)
-        z = theta @ a
-        a = expit(z)
-        history.append((z, a))
-    return history
-
-
 def unroll_params(params):
     theta1 = np.reshape(params[:hidden_layer * (input_layer + 1)],
                         (hidden_layer, (input_layer + 1)))
