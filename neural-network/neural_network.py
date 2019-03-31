@@ -7,6 +7,8 @@ from load_data import load_data
 from load_weights import load_weights
 from cost_function import cost_function
 from map_outputs import map_outputs
+from additional_funtions import sig_gradient
+from additional_funtions import rand_weight
 
 
 # Load Data and Weights
@@ -58,17 +60,6 @@ y_map = map_outputs(y, k)
 cost = cost_function(params, x, y_map, hyper_p=0)
 
 print(cost)
-
-
-def sig_gradient(z):
-    sig_grad = expit(z) * (1 - expit(z))
-    return sig_grad
-
-
-def rand_weight(lin, lout):
-    eps = np.sqrt(6) / np.sqrt(lin + lout)
-    w = np.random.rand(lout, 1 + lin) * 2 * eps - eps
-    return w
 
 
 init_theta1 = rand_weight(input_layer, hidden_layer)
