@@ -3,6 +3,8 @@ from scipy.special import expit
 
 
 def feed_forward(thetas, x):
+    """ Performs the feed-forward algorithm and saves each step in an array. """
+
     a = np.copy(x.T)
     history = []
 

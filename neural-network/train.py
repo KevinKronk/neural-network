@@ -8,6 +8,8 @@ from feed_forward import feed_forward
 
 
 def train(init_params, x, y, y_map, hyper_p=0, iters=100):
+    """ Trains a Neural Network, compares to the labelled outputs and reports an accuracy. """
+
     result = opt.minimize(cost_function, init_params, args=(x, y_map, hyper_p),
                           jac=back_propagation, method='TNC', options={'maxiter': iters})
 

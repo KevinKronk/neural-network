@@ -6,6 +6,8 @@ from feed_forward import feed_forward
 
 
 def back_propagation(params, x, y_map, hyper_p=0):
+    """ Performs the back-propagation algorithm with regularization. """
+
     m = len(x)
 
     theta1, theta2 = unroll_params(params)

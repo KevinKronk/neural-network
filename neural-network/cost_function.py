@@ -16,6 +16,8 @@ def unroll_params(params):
 
 
 def cost_function(params, x, y_map, hyper_p=0):
+    """ Performs the cost function with regularization. """
+
     size = len(x)
     thetas = np.array(unroll_params(params))
     h = feed_forward(thetas, x)[1][1]
